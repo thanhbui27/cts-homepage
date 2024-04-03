@@ -70,6 +70,7 @@ const useSendApi = <T, S>(
     onError: (err, _, context) => {
       //Roll back the previous data.
       queryClient.setQueryData([url!, params], context);
+      console.log(err);
     },
     onSettled: () => {
       //Invalidate the query to keep the fresh state.
